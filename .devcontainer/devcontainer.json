@@ -1,0 +1,19 @@
+{
+  "name": "Java Enterprise Environment",
+  "build": { 
+    "dockerfile": "Dockerfile",
+    "args": { "VARIANT": "21-bullseye" } 
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client"
+      ],
+      "settings": { "java.configuration.runtimes": [...] }
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "mvn clean install"
+}
